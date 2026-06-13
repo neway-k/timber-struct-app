@@ -1,0 +1,386 @@
+/* src/index.css - Professional Engineering Platform Stylesheet */
+
+:root {
+  --bg-primary: #0f172a; /* Deep Slate Blue */
+  --bg-secondary: #1e293b; /* Slate Card Background */
+  --bg-input: #0b0f19; /* Dark Dark Input Fields */
+  --accent-blue: #0284c7; /* Sky Blue Call-to-Action */
+  --accent-blue-hover: #0369a1;
+  --accent-green: #22c55e; /* Success Green */
+  --text-primary: #f8fafc; /* Off-White Text */
+  --text-muted: #94a3b8; /* Muted Slate Text */
+  --border-color: #334155; /* Subdued Border line */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f1f5f9; /* Outer dashboard gray workspace background */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =============================================================================
+   AUTHENTICATION GATES LAYOUT (Login & Register)
+   ============================================================================= */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0f172a; /* Solid dark engineering theme for authentication */
+}
+
+.auth-form {
+  background: var(--bg-secondary);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.3),
+    0 8px 10px -6px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color);
+}
+
+.auth-title {
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.auth-subtitle {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin: 0 0 24px 0;
+  line-height: 1.5;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  tracking: 0.05em;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 6px;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 14px;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
+}
+
+.btn-submit,
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--accent-blue);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  transition: background-color 0.2s;
+}
+
+.btn-submit:hover,
+.btn-primary:hover {
+  background-color: var(--accent-blue-hover);
+}
+
+.btn-primary {
+  background-color: var(--accent-green);
+}
+.btn-primary:hover {
+  background-color: #16a34a;
+}
+
+.auth-footer {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.auth-link {
+  color: var(--accent-blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+.alert-error {
+  color: #f87171;
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* =============================================================================
+   DASHBOARD ROOT FRAMEWORK LAYOUT
+   ============================================================================= */
+.dashboard-root {
+  display: flex;
+  height: 100vh;
+}
+
+.dashboard-sidebar {
+  width: 280px;
+  background-color: #0f172a;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border-color);
+}
+
+.sidebar-header {
+  padding: 24px 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.sidebar-operator {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 6px 0 0 0;
+}
+
+.sidebar-nav {
+  padding: 24px 12px;
+  flex: 1;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+.nav-active {
+  color: white;
+  background-color: var(--bg-secondary);
+}
+
+.sidebar-footer {
+  padding: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.btn-logout {
+  width: 100%;
+  padding: 10px;
+  background-color: #b91c1c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.btn-logout:hover {
+  background-color: #991b1b;
+}
+
+.dashboard-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* =============================================================================
+   OVERVIEW & AUDIT DATA LOGS
+   ============================================================================= */
+.overview-container {
+  padding: 40px;
+}
+
+.overview-headline {
+  color: #0f172a;
+  margin: 0 0 6px 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.overview-subheadline {
+  color: #64748b;
+  margin: 0 0 32px 0;
+  font-size: 15px;
+}
+
+.metrics-grid {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.metric-card {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  border: 1px solid #e2e8f0;
+}
+
+.metric-label {
+  margin: 0 0 8px 0;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.metric-value {
+  font-size: 32px;
+  margin: 0;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.metric-value-text {
+  font-size: 18px;
+  margin: 14px 0 0 0;
+  font-weight: 700;
+  color: #0369a1;
+}
+
+.data-card {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.card-title {
+  margin: 0 0 20px 0;
+  color: #0f172a;
+  fontsize: 18px;
+  font-weight: 700;
+}
+
+.audit-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+.audit-table th {
+  padding: 12px 8px;
+  border-bottom: 2px solid #f1f5f9;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.audit-table td {
+  padding: 16px 8px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+.badge-success {
+  background-color: #dcfce7;
+  color: #15803d;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 600;
+}
+.text-muted {
+  color: #64748b;
+}
+
+.calculator-wrapper {
+  background-color: #f1f5f9;
+  min-height: 100vh;
+  padding: 24px;
+  box-sizing: border-box;
+}
+.tooltip-container {
+  position: relative;
+  z-index: 9999;
+}
+
+.tooltip-text {
+  position: absolute;
+
+  z-index: 10000;
+}
+.input-group-container {
+  overflow: visible;
+}
+/* Responsive adjustments for audit table on smaller screens */
+@media screen and (max-width: 1024px) {
+  .audit-table-container {
+    overflow-x: auto; /* allow horizontal scrolling on small screens */
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 #f1f5f9;
+    width: 100%;
+  }
+  
+  .audit-table {
+    width: 100%;
+    min-width: 800px; /* for small screens, allow horizontal scrolling if table is wider than viewport */
+  }
+}
