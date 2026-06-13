@@ -1,5 +1,6 @@
 {
   "name": "project-1",
+  "homepage": "https://neway-k.github.io/timber-struct-app/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +8,9 @@
     "dev": "vite --open",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "jspdf": "^4.2.1",
